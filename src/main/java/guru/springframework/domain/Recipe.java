@@ -24,6 +24,10 @@ public class Recipe {
 
   @OneToOne(cascade = CascadeType.ALL)
   private Notes notes;
+
+  @ManyToMany
+  private Set<Category> categories;
+
   @Enumerated(value = EnumType.STRING)
   private Difficulty difficulty;
 
@@ -113,6 +117,14 @@ public class Recipe {
 
   public void setNotes(Notes notes) {
     this.notes = notes;
+  }
+
+  public Set<Category> getCategories() {
+    return categories;
+  }
+
+  public void setCategories(Set<Category> categories) {
+    this.categories = categories;
   }
 
   public Difficulty getDifficulty() {

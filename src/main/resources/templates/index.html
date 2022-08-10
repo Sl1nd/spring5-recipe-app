@@ -5,6 +5,19 @@
   <title>Hallo World</title>
 </head>
 <body>
-  <h1>Index Page</h1>
+<h1>Recipe List</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Description</th>
+    <th>Prep Time</th>
+  </tr>
+  <tr th:each="recipe : ${recipes}">
+    <td th:text="${recipe.id}"> Spring in Action</td>
+    <td th:text="${recipe.description}"> Spring in Action</td>
+    <td th:text="${recipe.prepTime}">Wrox</td>
+  </tr>
+</table>
 </body>
 </html>

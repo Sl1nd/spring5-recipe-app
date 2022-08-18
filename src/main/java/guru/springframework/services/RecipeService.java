@@ -1,5 +1,6 @@
 package guru.springframework.services;
 
+import guru.springframework.commands.RecipeCommand;
 import guru.springframework.domain.Recipe;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.core.CrudMethods;
@@ -10,4 +11,6 @@ public interface RecipeService  {
   Set<Recipe> getRecipes();
 
   Recipe findById(Long ID);
+
+  RecipeCommand saveRecipe(RecipeCommand recipeCmd);
 }

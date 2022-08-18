@@ -45,7 +45,7 @@ public class BootStrapData implements ApplicationListener<ContextRefreshedEvent>
       Ingredient mainIngredient = new Ingredient();
       mainIngredient.setDescription("Avocados");
       mainIngredient.setAmount(new BigDecimal(2));
-      mainIngredient.setUnitOfMeasure(amount);
+      mainIngredient.setUom(amount);
 
       // Category
       Optional<Category> mexicanOptional = categoryRepository.findByDescription("Mexican");
@@ -66,7 +66,7 @@ public class BootStrapData implements ApplicationListener<ContextRefreshedEvent>
       perfectGuacamole.setCookTime(10);
       perfectGuacamole.setNotes(guacNotes);
       perfectGuacamole.setDifficulty(Difficulty.EASY);
-      perfectGuacamole.addingredient(mainIngredient);
+      perfectGuacamole.addIngredient(mainIngredient);
       perfectGuacamole.getCategories().add(mexican);
       recipes.add(perfectGuacamole);
       System.out.println("::::RECIPE CREATED"+ perfectGuacamole.getDescription());

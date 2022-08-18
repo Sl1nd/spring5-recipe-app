@@ -61,14 +61,12 @@ public class BootStrapData implements ApplicationListener<ContextRefreshedEvent>
 
 
       Recipe perfectGuacamole = new Recipe();
-      guacNotes.setRecipe(perfectGuacamole);
-      mainIngredient.setRecipe(perfectGuacamole);
       perfectGuacamole.setDescription("Perfect quacamole");
       perfectGuacamole.setPrepTime(20);
       perfectGuacamole.setCookTime(10);
       perfectGuacamole.setNotes(guacNotes);
       perfectGuacamole.setDifficulty(Difficulty.EASY);
-      perfectGuacamole.getIngredients().add(mainIngredient);
+      perfectGuacamole.addingredient(mainIngredient);
       perfectGuacamole.getCategories().add(mexican);
       recipes.add(perfectGuacamole);
       System.out.println("::::RECIPE CREATED"+ perfectGuacamole.getDescription());
